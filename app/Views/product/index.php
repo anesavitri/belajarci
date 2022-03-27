@@ -26,7 +26,11 @@
                 <td><?= $item['category'] ?></td>
                 <td>
                     <a href="/product/<?= $item['id'] ?>/edit">Edit</a>
-                    <a href="/product/<?= $item['id'] ?>/delete">Delete</a>
+                    <form action="/product/<?= $item['id'] ?>" method="post" onsubmit="return confirm(`Are you sure?`)">
+                        <input type="hidden" name="_method" value="delete" />
+                        <button type="submit">Delete</button>
+                    </form>
+                    
                 </td>
             </tr>
 

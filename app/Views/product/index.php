@@ -1,9 +1,9 @@
 <?= $this->extend('base') ?>
 
 <?= $this->section('content') ?>
-    <table>
-        <thead>
-            <tr>
+    <table class="table table-hover">
+        <thead style="background-color:#6F7378">
+            <tr style="color:pink">
                 <td>No.</td>
                 <td>Name</td>
                 <td>Stock</td>
@@ -13,7 +13,7 @@
             </tr>
         </thead>
         <tbody>
-        <a href="/product/new">Add new product</a>
+        <a style="color:pink" href="/product/new" class="btn btn-secondary" >Add new product</a>
         <br />
         <br />
         <?php $no = 0; ?>
@@ -25,10 +25,10 @@
                 <td><?= $item['price'] ?></td>
                 <td><?= $item['category'] ?></td>
                 <td>
-                    <a href="/product/<?= $item['id'] ?>/edit">Edit</a>
+                    <a style="color:pink" href="/product/<?= $item['id'] ?>/edit" class="btn btn-secondary">Edit</a>
                     <form action="/product/<?= $item['id'] ?>" method="post" onsubmit="return confirm(`Are you sure?`)">
                         <input type="hidden" name="_method" value="delete" />
-                        <button type="submit">Delete</button>
+                        <button style="background-color:pink;color:#6F7378k" type="button">Delete</button>
                     </form>
                     
                 </td>

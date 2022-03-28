@@ -1,6 +1,7 @@
 <?= $this->extend('base') ?>
 
 <?= $this->section('content') ?>
+    <div class="wrapper" >
     <form action="/product/create" method="post">
         <label for="name">Product Name</label>
         <br />
@@ -33,4 +34,5 @@
         <br />
         <button type="submit">Submit</button>
     </form>
+    </div>
 <?= $this->endSection() ?>

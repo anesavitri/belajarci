@@ -28,7 +28,7 @@
                     <a style="color:pink" href="/product/<?= $item['id'] ?>/edit" class="btn btn-secondary">Edit</a>
                     <form action="/product/<?= $item['id'] ?>" method="post" onsubmit="return confirm(`Are you sure?`)">
                         <input type="hidden" name="_method" value="delete" />
-                        <button style="background-color:pink;color:#6F7378k" type="button">Delete</button>
+                        <button style="background-color:pink;color:#6F7378k" type="submit">Delete</button>
                     </form>
                     
                 </td>

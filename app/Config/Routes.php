@@ -38,25 +38,7 @@ $routes->resource('todos');
 $routes->resource('register');
 $routes->resource('login');
 
-// Equivalent to the following:
-$routes->get('product/new',             'Product::new');
-$routes->post('product',                'Product::create');
-$routes->get('product',                 'Product::index');
-$routes->get('product/(:segment)',      'Product::show/$1');
-$routes->get('product/(:segment)/edit', 'Product::edit/$1');
-$routes->put('product/(:segment)',      'Product::update/$1');
-$routes->patch('product/(:segment)',    'Product::update/$1');
-$routes->delete('product/(:segment)',   'Product::delete/$1');
 
-// Equivalent to the following:
-$routes->get('todos/new',             'Todos::new');
-$routes->post('todos',                'Todos::create');
-$routes->get('todos',                 'Todos::index');
-$routes->get('todos/(:segment)',      'Todos::show/$1');
-$routes->get('todos/(:segment)/edit', 'Todos::edit/$1');
-$routes->put('todos/(:segment)',      'Todos::update/$1');
-$routes->patch('todos/(:segment)',    'Todos::update/$1');
-$routes->delete('todos/(:segment)',   'Todos::delete/$1');
 // Tambahkan baris ini
 /*
  * --------------------------------------------------------------------

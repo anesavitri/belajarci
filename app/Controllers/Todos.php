@@ -5,7 +5,7 @@ namespace App\Controllers;
 use CodeIgniter\RESTful\ResourceController;
 use App\Models\TodosModel; 
 
-class Product extends ResourceController
+class Todos extends ResourceController
 {
     public function __construct() {
         $this->todosModel = new TodosModel();
@@ -24,6 +24,8 @@ class Product extends ResourceController
         $payload = [
             "todos" => $todos
         ];
+
+    
 
         echo view('todos/index', $payload);
     }

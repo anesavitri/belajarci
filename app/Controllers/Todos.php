@@ -3,12 +3,12 @@
 namespace App\Controllers;
 
 use CodeIgniter\RESTful\ResourceController;
-use App\Models\ProductModel; 
+use App\Models\TodosModel; 
 
 class Product extends ResourceController
 {
     public function __construct() {
-        $this->productModel = new ProductModel();
+        $this->todosModel = new TodosModel();
     }
 
     /**
@@ -19,13 +19,13 @@ class Product extends ResourceController
     public function index()
     {
         
-        $products = $this->productModel->findAll();
+        $todos = $this->todosModel->findAll();
 
         $payload = [
-            "products" => $products
+            "todos" => $todos
         ];
 
-        echo view('product/index', $payload);
+        echo view('todos/index', $payload);
     }
 
     /**
@@ -45,7 +45,7 @@ class Product extends ResourceController
      */
     public function new()
     {
-        echo view('product/new');
+        echo view('todos/new');
     }
 
     /**
@@ -56,15 +56,14 @@ class Product extends ResourceController
     public function create()
     {
         $payload = [
-            "name" => $this->request->getPost('name'),
-            "stock" => (int) $this->request->getPost('stock'),
-            "price" => (int) $this->request->getPost('price'),
-            "category" => $this->request->getPost('category'),
+            "title" => $this->request->getPost('title'),
+            "description" => $this->request->getPost('description'),
+
         ];
 
 
-        $this->productModel->insert($payload);
-        return redirect()->to('/product');
+        $this->todosModel->insert($payload);
+        return redirect()->to('/todos');
     }
 
     /**
@@ -74,13 +73,13 @@ class Product extends ResourceController
      */
     public function edit($id = null)
     {
-        $product = $this->productModel->find($id);
+        $todos = $this->todosModel->find($id);
         
-        if (!$product) {
+        if (!$todos) {
             throw new \Exception("Data not found!");   
         }
         
-        echo view('product/edit', ["data" => $product]);
+        echo view('todos/edit', ["data" => $todos]);
     }
 
 
@@ -92,14 +91,12 @@ class Product extends ResourceController
     public function update($id = null)
     {
         $payload = [
-            "name" => $this->request->getPost('name'),
-            "stock" => (int) $this->request->getPost('stock'),
-            "price" => (int) $this->request->getPost('price'),
-            "category" => $this->request->getPost('category'),
+            "title" => $this->request->getPost('title'),
+            "desscription" => $this->request->getPost('description'),
         ];
 
-        $this->productModel->update($id, $payload);
-        return redirect()->to('/product');
+        $this->todosModel->update($id, $payload);
+        return redirect()->to('/todos');
     }
 
     /**
@@ -109,7 +106,7 @@ class Product extends ResourceController
      */
     public function delete($id = null)
     {
-        $this->productModel->delete($id);
-        return redirect()->to('/product');
+        $this->todosModel->delete($id);
+        return redirect()->to('/todos');
     }
 }

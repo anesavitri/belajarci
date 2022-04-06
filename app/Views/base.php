@@ -1,18 +1,17 @@
 <html>
     <head>
-        <title><?= isset ($title) ? $title : "Hello World!" ?></title>
-        <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link rel="stylesheet" href="<?php echo base_url() ?>/assets/css/main.css">
-<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-<style>
-    
-</style>
+        <?= $this->include('layouts/head') ?>
     </head>
     <body>
-        <?= $this->renderSection('content') ?>
+        <?= $this->include('layouts/navbar') ?>
+
+        <main role="main " class="container">
+            <?= $this->include('layouts/header') ?>
+
+            <?= $this->renderSection('content') ?>
+        </main>
+        <?= $this->include('layouts/footer') ?>
+
+        <?= $this->include('layouts/scripts') ?>
     </body>
 </html>

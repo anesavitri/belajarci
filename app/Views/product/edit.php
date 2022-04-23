@@ -6,8 +6,9 @@
         <div class="col-12">
             <h5 class="mb-4">Update product <?= $data['name'] ?></h5>
 
-            <form action="/product/<?= $data['id'] ?>" method="post">
+            <form action="/product/<?= $data['id'] ?>" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="_method" value="put" />
+                <input type="hidden" name="oldphoto" value= "<?=$data['photo']?>" />
 
                 <div class="form-group">
                     <label for="example-product-name">Product Name</label>
@@ -34,6 +35,11 @@
                         <option value="food_and_beverages" <?= $data['category'] == "food_and_beverages" ? "selected" : "" ?>> Food & Beverages</option>
                         <option value="books" <?= $data['category'] == "books" ? "selected" : "" ?>>Books</option>
                     </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="example-product-photo">Photo</label>
+                    <input type="file" class="form-control" id="example-product-photo" aria-describedby="photoHelp" name="photo">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Submit</button>

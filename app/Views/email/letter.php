@@ -1,5 +1,3 @@
-<?= $this->extend('base') ?>
-<?= $this->section('content') ?>
 <div class="container">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,11 +14,9 @@
 						</div>
 					</div>
 					<div class="col-md-8 py-4 py-md-5 d-flex align-items-center pl-md-5 aside-stretch-right">
-						<form action="/email/create" class="subscribe-form w-100">
-                        <form action="/product/create" method="POST">
+						<form action="#" class="subscribe-form w-100">
               <div class="form-group d-flex">
-                <input type="text" class="form-control rounded-left" placeholder="Enter email address" name='email'>
-                <input type="text" class="form-control rounded-left" placeholder="Enter name" name='name'>
+                <input type="text" class="form-control rounded-left" placeholder="Enter email address">
                 <button type="submit" class="form-control submit"><span>Submit</span></button>
               </div>
             </form>
@@ -28,4 +24,4 @@
 				</div>
 				
 			</div> 
-<?= $this->endSection() ?>
+			<?= $this->endSection() ?>

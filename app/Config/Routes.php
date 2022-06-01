@@ -39,6 +39,7 @@ $routes->group('', ['filter' => 'authMiddleware'], function($routes) {
 
 $routes->resource('register');
 $routes->resource('login');
+$routes->post('email', 'Email::create');
 
 
 // Tambahkan baris ini
